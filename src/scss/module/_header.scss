@@ -1,0 +1,101 @@
+.header {
+  width: 100%;
+  height: $header_h;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+
+  .gnav_trigger {
+    display: none;
+
+    @include sp_normal_under {
+      display: inline-block;
+      transition: all .4s;
+      position: absolute;
+      width: 38px;
+      height: 34px;
+      right: 10px;
+      top: 8px;
+
+      &_span {
+        display: inline-block;
+        transition: all .4s;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: black;
+        &:nth-of-type(1) {
+          top: 0;
+        }
+        &:nth-of-type(2) {
+          top: 15px;
+        }
+        &:nth-of-type(3) {
+          top: 30px;
+        }
+      }
+
+      &._active {
+        span {
+          &:nth-of-type(1) {
+            -webkit-transform: translateY(15px) rotate(-45deg);
+            transform: translateY(15px) rotate(-45deg);
+          }
+          &:nth-of-type(2) {
+            opacity: 0;
+          }
+          &:nth-of-type(3) {
+            -webkit-transform: translateY(-14px) rotate(45deg);
+            transform: translateY(-14px) rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+  .gnav {
+    background-color: #fff;
+
+    @include sp_normal_under {
+      position: fixed;
+      width: 100vw;
+      height: calc(100vh - #{$header_h});
+      top: $header_h;
+      left: 0;
+      z-index: 5;
+      transform: translateY(-120%);
+      transition: all .5s 0s ease;
+
+      &._active {
+        transform: translateY(0%);
+      }
+    }
+
+    .gnav_list {
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      justify-content: space-between;
+
+      @include sp_normal_under {
+        display: block;
+        height: calc(100vh - #{$header_h});
+      }
+
+      .gnav_item {
+
+        .gnav_link {
+          @include calc_vw(padding-left, 48.65);
+          @include calc_vw(padding-right, 48.65);
+          color: #000;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

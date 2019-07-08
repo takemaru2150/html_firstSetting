@@ -1,0 +1,20 @@
+// baseファイル
+@import './base/_reset.scss';
+@import './base/_base.scss';
+
+//settingファイル
+@import './setting/_setting.scss';
+
+//mixinファイル
+@import './mixin/_mixin_calc.scss';
+@import './mixin/_mixin_breakpoint.scss';
+@import './mixin/_mixin_main.scss';
+@import './mixin/_mixin_sidebar.scss';
+@import './mixin/_mixin_footer.scss';
+
+//moduleファイル
+@import './module/_body.scss';
+@import './module/_header.scss';
+@import './module/_main.scss';
+@import './module/_sidebar.scss';
+@import './module/_footer.scss';
